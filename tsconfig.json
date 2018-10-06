@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/tsc",
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "jsx": "react",
+    "types": [
+      "mendix-client"
+    ],
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "exclude": [
+    "node_modules",
+    ".npm"
+  ]
+}

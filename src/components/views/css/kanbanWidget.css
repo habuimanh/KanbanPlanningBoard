@@ -1,0 +1,811 @@
+#kanbanWidget .board{
+    white-space: nowrap;
+    overflow-y: hidden;
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    height: 100%; 
+    background: #026AA7;
+    box-sizing: border-box;
+    padding: 5px;
+    padding-bottom: 20px;
+}     
+#kanbanWidget .board.readonly *{
+    cursor: default!important;
+}
+::-webkit-scrollbar {
+    height: 13px;
+    width: 13px;
+}
+
+::-webkit-scrollbar-button {
+    display: block;
+    height: 5px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(226, 228, 230, 0.25);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: rgba(0,0,0,.15);
+    border-radius: 10px;
+}
+
+
+#kanbanWidget .list{
+    display: inline-block;
+    vertical-align: top; 
+    border-radius: 3px;
+    position: relative;
+    width: 270px;
+    margin: 5px;
+    height: 100%;
+} 
+#kanbanWidget .addList{
+    border-radius: 3px;
+    position: relative;
+    width: 270px;
+    margin: 8px 4px 4px 4px;
+    padding: 4px 4px 4px 4px;
+    background: rgba(0,0,0,.12);
+    cursor: pointer; 
+    color: #fff;
+    height: auto;
+    min-height: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+#kanbanWidget .addList span{
+    padding: 7px;
+    color: rgba(255,255,255,.7);
+}
+#kanbanWidget .list-name{
+    border-radius: 3px 3px 0px 0px;
+    cursor: pointer;
+    background: #E2E4E6;
+    padding: 8px 10px 2px;
+    position: relative;
+}
+#kanbanWidget .list-name-input{
+    background: 0 0;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    font-weight: 700;
+    margin: -3px -5px;
+    height: 18px;
+    min-height: 18px;
+    padding: 3px 5px;
+    resize: none;
+    max-height: 16pc;
+    overflow: hidden;
+    word-wrap: break-word;
+    height: 23.6px
+}
+#kanbanWidget .list-name-input:focus{
+    background-color: rgba(255,255,255,.85);
+}
+#kanbanWidget .save-edits{
+    position: relative;
+    background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+    box-shadow: 0 1px 0 #3F6F21;
+    color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 22px;
+    margin: 8px 4px 0 0;
+    padding: 7px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;    
+}
+#kanbanWidget .list-card-container{   
+    max-height: 88%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #E2E4E6;
+}
+
+#kanbanWidget .board.readonly .list-card-container {
+    border-radius: 0 0 3px 3px;
+}
+
+.list-card-container::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+.list-card-container::-webkit-scrollbar-track-piece {
+    background: #D6DADC;
+    border-radius: 10px;
+}
+
+.list-card-container::-webkit-scrollbar-thumb {
+    background: rgba(161, 166, 171, 0.51);
+    border-radius: 10px;
+}
+
+#kanbanWidget .add-card-container {
+    background: rgb(226, 228, 230);
+    border-radius: 0 0 3px 3px;
+}
+
+#kanbanWidget .addCard{
+    border-radius: 0px 0px 3px 3px;
+    background: #E2E4E6;
+    color: #8c8c8c;
+    display: block;
+    padding: 8px 10px;
+    position: relative;
+    cursor: pointer;
+}
+#kanbanWidget .addCard:hover{
+    background-color: #CDD2D4;
+    color: #4d4d4d;
+    text-decoration: underline;
+}
+#kanbanWidget .card.created-card:hover, #kanbanWidget .card.created-card.dragging {
+    background: #edeff0;
+}
+#kanbanWidget .card {
+    width: 94%;
+    margin: 0 2px 0 7px;
+    /* -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3); */
+    /* box-shadow: 1px 1px 1px rgba(0,0,0,0.3); */
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    margin-bottom: 6px;
+    max-width: 300px;
+    min-height: 20px;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+}
+#kanbanWidget .create-list{
+    height: auto;
+    min-height: 30px;
+    padding: 4px;
+    border-radius: 3px;
+    background-color: #E2E4E6;
+    margin-right: 10px;
+    width: 270px;
+    margin: 0 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    position: relative;
+    top: 8px;
+}
+#kanbanWidget form {
+    display: block;
+    margin-top: 0em;
+}
+#kanbanWidget .addlist-name-input{ 
+    background: rgba(0,0,0,.05);
+    border-color: #aaa;
+    box-shadow: inset 0 1px 8px rgba(0,0,0,.15);
+    display: block;
+    margin: 0;
+    width: 100%;
+    border: 1px solid #CDD2D4;
+    border-radius: 3px;
+    min-height: 2pc;
+    padding: 7px;
+}
+#kanbanWidget .list-add-controls{
+    overflow: hidden;
+    margin: 4px 0 0;
+    height: 37px;
+}
+#kanbanWidget .list-add-controls #addButton{
+    height:30px;
+    background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+    box-shadow: 0 1px 0 #3F6F21;
+    color: #fff;
+    border-color: #5AAC44;
+}
+#kanbanWidget  #closeButton{
+    top:8px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    color: #999;
+    cursor: pointer;
+}
+.mx-image-container {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+}
+
+.mx-image {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    float: right;
+    border-radius: inherit;
+}
+
+.account-brief-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    margin: 0 0 4px 4px;
+}
+
+.card .card-details {
+    padding: 5px 6px 2px 8px;
+    overflow: hidden;
+}
+
+.card .card-details .card-title {
+    line-height: 18px;
+    white-space: normal;
+    font-size: 14px;
+    color: #4d4d4d;
+    /* margin-bottom: 2px;  */
+}
+
+.card.created-card.quick-editing .card-details .card-title-edit {
+    /* transition: background 85ms ease-in,border-color 85ms ease-in; */
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    resize: none;
+    height: 90px;
+    background: #fff;
+    border: 0;
+    padding: 0 !important;
+    border-radius: 3px;
+    margin-bottom: 9pt;
+}
+
+.card .card-details .card-badges {
+    line-height: 18px;
+    padding: 5px 0 0 5px;
+    float: left;
+    white-space: normal;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.card .card-details .card-badge {
+    display: inline-block;
+    margin-right: 14px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #8c8c8c;
+}
+
+.card-badge .card-badge-text {
+    line-height: 14px;
+    margin-left: 4px;
+}
+
+.card .card-details .card-member-list {
+    float: right;
+    margin-top: 5px;
+    display: inline-flex;
+}
+
+.card .card-member-list .card-member {
+    position: relative;
+    display: inline-block;
+}
+
+.account-avatar {
+    background:#E2E4E6;
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    margin: 0 0 4px 4px;
+    color: #4d4d4d;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 9pt;
+    display: inline-block;
+}
+
+.card .card-member-list .account-avatar:hover {
+    background: #CDD2D4;
+    opacity: 0.75;
+}
+
+.mini-profile {
+    margin: 8px 8px;
+    word-wrap: break-word;
+    align-items: center;
+    display: flex;
+}
+
+.mini-profile .card-member-fullname {
+    font-size: 1pc;
+    font-weight: 700;   
+    display: inline-block;
+    position: relative;
+}
+
+.account-avatar.large {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    margin-right: 8px;
+    line-height: 50px;
+    font-size: 12pt;
+}
+
+.remove-member {
+    cursor: pointer;
+    font-weight: 700;
+    padding-left: 10px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.remove-member:hover {
+    background: #298FCA;
+}
+
+.card .card-label-list {
+    display: inline-block;
+    margin: 2px 0;
+    line-height: 11px;
+    white-space: normal;
+}
+
+.card-label {
+    background: #B6BBBF;
+    width: 42px;
+    border-radius: 3px;
+    height: 8px; 
+    display: inline-block;
+    margin-right: 4px;
+    /* transition: height 0.3s linear, width 0.3s linear; */
+}
+
+.card .card-label-list-focused {
+    line-height: 18px;
+}
+
+.card-label-focused {
+    width: 58px;
+     height: 1pc;  
+    color: #fff;
+    font-size: 9pt;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1pc;
+}
+
+.card-label-black {
+    background: #4d4d4d
+}
+
+.card-label-list:hover .card-label-black {
+    background: #272727
+}
+
+.card-label-violet {
+    background: #C377E0
+}
+
+.card-label-list:hover .card-label-violet {
+    background: #89609E;
+}
+
+.card-label-orange {
+    background: #FFAB4A
+}
+
+.card-label-list:hover .card-label-orange {
+    background: #D29034
+}
+
+.card-label-yellow {
+    background: #F2D600
+}
+
+.card-label-list:hover .card-label-yellow {
+    background: #D9B51C
+}
+
+.card-label-red {
+    background: #EB5A46
+}
+
+.card-label-list:hover .card-label-red {
+    background: #B04632
+}
+
+.card-label-blue {
+    background: #0079BF
+}
+
+.card-label-list:hover .card-label-blue {
+    background: #055A8C
+}
+
+.card-label-green {
+    background: #61BD4F
+}
+
+.card-label-list:hover .card-label-green{
+    background: #519839
+}
+
+.card-badge.is-due-past {
+    background-color: #EC9488;
+    border-radius: 3px;
+    color: #fff !important;
+    padding: 1px 4px;
+}
+
+.card-badge.is-due-soon {
+    background-color: #F2D600;
+    border-radius: 3px;
+    color: #fff !important;
+    padding: 1px 4px;
+}
+
+.card-badge.is-complete {
+    background-color: #61BD4F;
+    border-radius: 3px;
+    color: #fff !important;
+    padding: 1px 4px;
+}
+
+.card.created-card .card-edit {
+    font-size: 11px;
+    line-height: 25px;
+    display: none;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    color: #8c8c8c;
+    position: absolute;
+    border-radius: 3px;
+    top: 3px;
+    right: 3px;
+    background: #edeff0;
+    opacity: 0.8;
+}
+
+.card.created-card.quick-editing {
+    margin: 0!important;
+    cursor: default !important;
+    padding: 0;
+}
+
+#kanbanWidget .card.created-card.quick-editing:hover {
+    background: #fff;
+}
+
+.card.created-card:hover .card-edit:hover {
+    color: #4d4d4d;
+    background: #E2E4E6;
+    opacity: 1;
+}
+
+.card.created-card:hover .card-edit {
+    display: block;
+}
+
+.card .card-quick-editor {
+    width: 15pc;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    /* transition: opacity 85ms ease-in, transform 85ms ease-in; */
+}
+
+.card-quick-editor-overlay.is-editing .card-quick-editor {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card .card-quick-editor .card-quick-editor-button {
+    margin: 0 0 4px 8px;
+    padding: 6px 9pt 6px 8px;
+    color: #e6e6e6;
+    transition: margin-left 85ms ease-in;
+    background: rgba(0,0,0,.6);
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+}
+
+.card .card-quick-editor .card-quick-editor-button:hover {
+    background: rgba(0,0,0,0.8);
+    margin-left: 13px;
+}
+
+.card-quick-editor-label {
+    margin-left: 10px;
+}
+
+.card-quick-editor-icon {
+    font-size: 10px;
+}
+
+.card-quick-editor-overlay {
+    background: rgba(0,0,0,.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.card-quick-editor-overlay.is-editing {
+    display: block;
+}
+
+#kanbanWidget .card placeholder{
+    background-color: #d0d0d0;
+}
+#kanbanWidget .card .card-badge .glyphicon{
+    line-height: unset;
+}
+#kanbanWidget .card textarea{
+    height: 54px;
+    width: 100%;
+    border: none;
+    overflow: auto;
+    outline: none;
+    padding: 6px 6px 2px 8px;
+}
+#kanbanWidget .card-button-container{
+    padding-bottom: 8px;
+    padding-left: 13px;
+    margin-right:5px;
+}
+#kanbanWidget .card-button-container #addButton{
+    background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+    box-shadow: 0 1px 0 #3F6F21;
+    color: #fff;
+    border-color: #5AAC44;
+}
+.ReactModalPortal .modal-overlay {
+    background: transparent;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity .15s linear;
+}
+.ReactModalPortal .modal-content {
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid #DDD;
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.ReactModalPortal .modal-header {
+    position: relative;
+    border-radius: 0;
+    padding: 15px 20px;
+    background-color: transparent;
+    border-bottom-color: #DDD;
+}
+
+.ReactModalPortal .modal-body {
+    padding: 20px;
+    position: relative;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.ReactModalPortal .modal-title {
+    line-height: 1.42857143;
+}
+
+.ReactModalPortal .modal-header h4 {
+    font-weight: bold;
+    color: #555;
+    font-size: 16px;
+    margin: 0;
+}
+
+.ReactModalPortal .modal-header .close {
+    color: #555;
+    text-shadow: none;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.ReactModalPortal .modal-header .close:hover {
+    color: black;
+    opacity: .5;
+}
+
+.ReactModalPortal .modal-footer {
+    padding: 20px;
+    margin-top: 0;
+    border-style: none;
+    text-align: left;
+}
+
+#kanbanWidget .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+}
+#kanbanWidget .list-header-extras {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+#kanbanWidget .list-header-extras-menu, .list-header-extras-subscribe {
+    float: left;
+    padding: 4px;
+}
+#kanbanWidget .pop-over {
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #D6DADC;
+    border-bottom-color: #C4C9CC;
+    box-shadow: 0 1px 6px rgba(0,0,0,.15);
+    display: none;
+    position: fixed;
+    right: -9999px;
+    top: -9999px;
+    width: 300px;
+    z-index: 70;
+    transform: translate3d(0,0,0);
+}
+#kanbanWidget .pop-over-header-title {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #8c8c8c;
+    display: block;
+    line-height: 36px;
+    border-bottom: 1px solid #D6DADC;
+    margin: 0 10px;
+    overflow: hidden;
+    padding: 0 2pc;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 1;
+}
+#kanbanWidget .pop-over-header {
+    height: 36px;
+    position: relative;
+    margin-bottom: 8px;
+    text-align: center;
+}
+#kanbanWidget .pop-over-header-close-btn {
+    padding: 10px 10px 10px 4px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    z-index: 2;
+}
+#kanbanWidget .pop-over-content {
+    padding: 0 10px 10px;
+}
+#kanbanWidget .pop-over-list{
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-margin-before: 1em;
+    -moz-margin-after: 1em;
+    -moz-margin-start: 0px;
+    -moz-margin-end: 0px;
+    -moz-padding-start: 0px;
+    list-style: none;
+    margin: 0;
+}
+#kanbanWidget .pop-over-list li>a {
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    padding: 6px 10px;
+    position: relative;
+    margin: 0 -10px;
+    text-decoration: none;
+}
+#kanbanWidget .pop-over-list li>a:hover {
+    background-color: #298FCA;
+    color: #fff;
+}
+#kanbanWidget a {
+    color: #444;
+     background-color: transparent;
+}
+#kanbanWidget .list-header-extras-menu:hover {
+    border-radius: 3px;
+    background: #CDD2D4;
+}
+
+.special-tooltip {
+    font-size: 11px !important;
+    padding: 3px 5px !important;
+}
+
+.search-bar {
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #CDD2D4;
+    margin-bottom: 10px;
+}
+
+.search-bar:focus {
+    border-color: #298FCA;
+    box-shadow: 0 0 2px #298FCA;
+}
+
+.account-list-item {
+    border-radius: 4px;
+    padding: 3px 0 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.account-list-item:hover {
+    cursor: pointer;
+    background: #288ECA;
+    color: #fff!important;
+}
+
+.account-full-name {
+    margin-left: 10px;
+}
+
+.account-list-item .tick {
+    float: right;
+    text-align: center;
+    position: absolute;
+    right: 15px;
+    color: #999;
+    font-size: 13px;
+}
+
+.account-list-item:hover .tick {
+    color: #fff;
+}

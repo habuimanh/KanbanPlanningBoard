@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="com.mendix.widget.custom.kanban.kanbanWidgetOffline" needsEntityContext="true" offlineCapable="true"
+    xmlns="http://www.mendix.com/widget/1.0/">
+    <name>PlanningBoard (Offline supported)</name>
+    <description>Widget for visual planning and task management.</description>
+    <icon>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
+</icon>
+    <properties>
+        <property key="board" type="string">
+            <caption>Board*</caption>
+            <category>1) Board</category>
+            <description>Board entity. The widget has to be placed in dataview which has Board as context.</description>
+        </property>
+        <property key="boardOpenLabels" type="string" required="false">
+            <caption>Labels opened/closed states</caption>
+            <category>1) Board</category>
+            <description>Boolean value for the state of labels. If true, all labels will be opened and otherwise.</description>
+        </property>
+        <property key="boardReadonly" type="string" required="false">
+            <caption>Board&#39;s readonly/editable mode</caption>
+            <category>1) Board</category>
+            <description>Boolean value for readonly/edit mode of the board. If true, users are able to edit the Board and otherwise.</description>
+        </property>
+        <property key="offlineSupported" type="boolean" defaultValue="true">
+            <caption>Offline supported</caption>
+            <category>1) Board</category>
+            <description>Boolean value for offline mode of the board. If you are using widget offline supported, please select Yes.</description>
+        </property>
+        <property key="list" type="string">
+            <caption>List*</caption>
+            <category>2) List</category>
+            <description>List entity</description>
+        </property>
+        <property key="listName" type="string">
+            <caption>List&#39;s Name*</caption>
+            <category>2) List</category>
+            <description>Name of the List, will be displayed as title of the list.</description>
+        </property>
+        <property key="listOrder" type="string">
+            <caption>List&#39;s Order*</caption>
+            <category>2) List</category>
+            <description>Horizontal order of the List in Board, from right to left.</description>
+        </property>
+        <property key="listEditForm" type="form" required="false">
+            <caption>List&#39;s Edit form</caption>
+            <category>2) List</category>
+            <description>List edit form</description>
+        </property>
+        <property key="listBoardAssociation" type="string" required="true">
+            <caption>List-Board relation*</caption>
+            <category>2) List</category>
+            <description>Association from List to Board</description>
+        </property>
+        <property key="allowAddList" type="boolean" defaultValue="true">
+            <caption>Allow add list</caption>
+            <category>2) List</category>
+            <description>Boolean value for allow to add lists on the board. If false, users cannot to using add list action in board.</description>
+        </property>
+        <property key="card" type="string">
+            <caption>Card*</caption>
+            <category>3) Card</category>
+            <description>Card Entity</description>
+        </property>
+        <property key="cardName" type="string">
+            <caption>Card&#39;s Name*</caption>
+            <category>3) Card</category>
+            <description>Name of Card</description>
+        </property>
+        <property key="cardDescription" type="string">
+            <caption>Card&#39;s Desciption</caption>
+            <category>3) Card</category>
+            <description>Description of Card</description>
+        </property>
+        <property key="cardOrder" type="string">
+            <caption>Card&#39;s Order*</caption>
+            <category>3) Card</category>
+            <description>Vertical Order of Card in List, from top to bottom</description>
+        </property>
+        <property key="cardDueDate" type="string" required="false">
+            <caption>Card&#39;s DueDate</caption>
+            <category>3) Card</category>
+            <description>Due date of Card</description>
+        </property>
+        <!-- <property key="cardState" type="attribute" entityProperty="card" required="false"><caption>Card State</caption><category>3) Card</category><description>State of the Card</description><attributeTypes><attributeType name="Enum"/></attributeTypes></property> -->
+        <!-- <property key="cardStartDate" type="attribute" entityProperty="card" required="false"><caption>Card StartDate</caption><category>3) Card</category><description>StartDate of the Card</description><attributeTypes><attributeType name="DateTime"/></attributeTypes></property> -->
+        <property key="cardEditForm" required="false" type="form">
+            <caption>Card&#39;s Edit form</caption>
+            <category>3) Card</category>
+            <description>Edit form will be opened if user clicks on card</description>
+        </property>
+        <property key="cardListAssociation" type="string">
+            <caption>Card-List relation*</caption>
+            <category>3) Card</category>
+            <description>Assocation from Card to List</description>
+        </property>
+        <property key="allowAddCard" type="boolean" defaultValue="true">
+            <caption>Allow add card</caption>
+            <category>3) Card</category>
+            <description>Boolean value for allow to add cards on the board. If false, users cannot to using add card action in board.</description>
+        </property>
+        <property key="comment" type="string" required="false">
+            <caption>Comment</caption>
+            <category>4) Comment</category>
+            <description>Comment of Card</description>
+        </property>
+        <property key="commentCardAssociation" type="string" required="false">
+            <caption>Comment-Card relation</caption>
+            <category>4) Comment</category>
+            <description>Assocation from Comment to Card</description>
+        </property>
+        <!-- <property key="commentText" type="attribute" entityProperty="comment" required="false"><caption>Comment Text</caption><category>4) Comment</category><description>Text of the Comment</description><attributeTypes><attributeType name="String"/></attributeTypes></property> -->
+        <property key="label" type="string" required="false">
+            <caption>Label</caption>
+            <category>5) Label</category>
+            <description>Labels assigned to card to add more information to Card. For example, label can be DANGER(red), SAFE(green) or RESTRICTED(black)</description>
+        </property>
+        <property key="labelName" type="string" required="false">
+            <caption>Label&#39;s Name</caption>
+            <category>5) Label</category>
+            <description>Name of the Label</description>
+        </property>
+        <property key="labelColor" type="string" required="false">
+            <caption>Label&#39;s Color</caption>
+            <category>5) Label</category>
+            <description>Color of Label</description>
+        </property>
+        <property key="labelCardAssociation" type="string" required="false">
+            <caption>Label-Card relation</caption>
+            <category>5) Label</category>
+            <description>Assocation from Label to Card</description>
+        </property>
+        <property key="workList" type="string" required="false">
+            <caption>WorkList (SubTasks)</caption>
+            <category>6) WorkList</category>
+            <description>List of Works(SubTask) in Card. We use this one to determine number of subtask to show on Card.</description>
+        </property>
+        <!-- <property key="workListName" type="attribute" entityProperty="workList" required="false"><caption>Worklist Name</caption><category>6) WorkList</category><description>Name of the WorkList</description><attributeTypes><attributeType name="String"/></attributeTypes></property> -->
+        <property key="workListProgressRate" type="string" required="false">
+            <caption>Work&#39;s ProgressRate</caption>
+            <category>6) WorkList</category>
+            <description>Progress rate of Worklist</description>
+        </property>
+        <property key="workListCardAssociation" type="string" required="false">
+            <caption>WorkList-Card relation</caption>
+            <category>6) WorkList</category>
+            <description>Assocation from WorkList to Card</description>
+        </property>
+        <!-- <property key="work" type="entity" required="false"><caption>Work</caption><category>7) Work</category><description>Work in the WorkList</description></property> -->
+        <!-- <property key="workName" type="attribute" entityProperty="work" required="false"><caption>Work Name</caption><category>7) Work</category><description>Name of the Work</description><attributeTypes><attributeType name="String"/></attributeTypes></property> -->
+        <!-- <property key="workState" type="attribute" entityProperty="work" required="false"><caption>Work State</caption><category>7) Work</category><description>State of the Work</description><attributeTypes><attributeType name="Enum"/></attributeTypes></property> -->
+        <property key="attachment" type="string" required="false">
+            <caption>Attachment</caption>
+            <category>7) Attachment</category>
+            <description>Attachment on Card</description>
+        </property>
+        <property key="attachmentFileId" type="string" required="false">
+            <caption>Attachment File Id</caption>
+            <category>7) Attachment</category>
+            <description>FileID of attached file</description>
+        </property>
+        <property key="attachmentCardAssociation" type="string" required="false">
+            <caption>Attachment-Card relation</caption>
+            <category>7) Attachment</category>
+            <description>Assocation from Attachment to Card</description>
+        </property>
+        <!-- <property key="attachmentText" type="attribute" entityProperty="attachment" required="false"><caption>Attachment Text</caption><category>7) Attachment</category><description>link or note</description><attributeTypes><attributeType name="String"/></attributeTypes></property> -->
+        <!-- <property key="document" type="entity" required="false"><caption>Document</caption><category>7) Attachment</category><description>file document</description></property> -->
+        <property key="avatar" type="string" required="false">
+            <caption>Avatar</caption>
+            <category>8) Member</category>
+            <description>Avatar of assignees</description>
+        </property>
+        <property key="account" type="string" required="false">
+            <caption>Assignee</caption>
+            <category>8) Member</category>
+            <description>Assignee</description>
+        </property>
+        <property key="accountFullName" type="string" required="false">
+            <caption>Assignee&#39;s FullName</caption>
+            <category>8) Member</category>
+            <description>Fullname of assignee</description>
+        </property>
+        <property key="memberCardAssociation" type="string" required="false">
+            <caption>Assignee-Card relation</caption>
+            <category>8) Member</category>
+            <description>Assocation from Assignee to Card</description>
+        </property>
+        <!-- <property key="boardCreatorAssociation" type="entity" entityProperty="board" isPath="yes" pathType="reference" required="false"><caption>Board-Creator relation</caption><category>1) Board</category><description>relation between board and its creator</description></property> -->
+        <!-- <property key="boardMemberAssociation" type="entity" entityProperty="board" isPath="yes" pathType="referenceSet" required="false"><caption>Board-Member relation</caption><category>1) Board</category><description>relation between board and account</description></property>   -->
+        <!-- <property key="mentionCardCommentAssociation" type="entity" entityProperty="card" isPath="yes" pathType="reference" required="false"><caption>MentionCard-Comment relation</caption><category>3) Card</category><description>relation between mention card and comment</description></property>  -->
+        <!-- <property key="commentOwnerAssociation" type="entity" entityProperty="comment" isPath="yes" pathType="reference" required="false"><caption>Comment-Owner relation</caption><category>4) Comment</category><description>relation between comment and its owner</description></property>   -->
+        <!-- <property key="workWorkListAssociation" type="entity" entityProperty="work" isPath="yes" pathType="reference" required="false"><caption>Work-WorkList relation</caption><category>7) Work</category><description>relation between work and work list</description></property> -->
+        <!-- <property key="attachmentCommentAssociation" type="entity" entityProperty="attachment" isPath="yes" pathType="reference" required="false"><caption>Attachment-Comment relation</caption><category>7) Attachment</category><description>relation between attachment and comment</description></property> -->
+        <!-- <property key="documentAttachmentAssociation" type="entity" entityProperty="document" isPath="yes" pathType="reference" required="false"><caption>Document-Attachment relation</caption><category>7) Attachment</category><description>relation between document and attachment</description></property> -->
+        <!-- <property key="subscriberCardAssociation" type="entity" entityProperty="account" isPath="yes" pathType="referenceSet" required="false"><caption>Subscriber-Card relation</caption><category>8) Member</category><description>relation between subscriber and card</description></property> -->
+        <!-- <property key="viewerBoardAssociation" type="entity" entityProperty="account" isPath="yes" pathType="referenceSet" required="false"><caption>Viewer-Board relation</caption><category>8) Member</category><description>relation between viewer and board</description></property> -->
+        <!-- <property key="tagMemberCommentAssociation" type="entity" entityProperty="account" isPath="yes" pathType="referenceSet" required="false"><caption>TagMember-Comment relation</caption><category>8) Member</category><description>relation between tag account and comment</description></property>  -->
+        <property key="accountAvatarAssociation" type="string" required="false">
+            <caption>Assignee-Avatar relation</caption>
+            <category>8) Member</category>
+            <description>Assocation from Assignee to Avatar</description>
+        </property>
+    </properties>
+</widget>
