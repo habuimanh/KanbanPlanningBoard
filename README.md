@@ -1,13 +1,13 @@
 # KanbanPlanningBoard
 This code used for "KanbanPlanningBoard Application" by using React combine with Redux.
 
-# Overview
+### Overview
 
 This is the code for [this](https://appstore.home.mendix.com/link/app/78941/SCH/PlanningBoard) application on Mendix Appstore by using React-ReduxJS.
 
 ![Image](images/9.png)
 
-#### Description
+### Description
 
 As one of essential component for all planning apps, the PlanningBoard allows user to manage your project. It could be use for software development, task management, or process management ...
 
@@ -29,11 +29,11 @@ The PlanningBoard can be seen in many project development tools like Asana, Jira
 ![Image](images/3.png)
 ![Image](images/5.png)
 
-#### Typical usage scenario
+### Typical usage scenario
  - Software project development in Scurm/Kanban
  - Business planning
 
-#### Features and limitations
+### Features and limitations
  - Easily create List and Card
  - Support inline editing for List & Card
  - Fully support drag/drop of Card from List->List
@@ -42,10 +42,10 @@ The PlanningBoard can be seen in many project development tools like Asana, Jira
 
  ![Image](images/8.png)
 
-#### Dependencies
+### Dependencies
  - Mendix 7.3.0 and later
 
-#### Configuration
+### Configuration
 
 The domainmodel will look like this:
 
